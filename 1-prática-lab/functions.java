@@ -22,9 +22,6 @@ public class functions {
         }
     }
 
-    public static int 
-
-
 
 
 

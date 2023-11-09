@@ -7,7 +7,7 @@ public class ListaLigada implements EstruturaElementar{
     private No cabeca;
 
     public ListaLigada() {
-
+        cabeca = null;
     }
 
     @Override
@@ -17,9 +17,27 @@ public class ListaLigada implements EstruturaElementar{
     }
 
     @Override
-    public int buscaIndice(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscaIndice'");
+    public int buscaIndice(int valor) {//valor = indice a ser buscado
+        //passar o indice e retornar o valor
+        //o primeiro nó a ser procurado 
+        
+        No atual = cabeca; //"inicio"
+        int indice = 0; //indice do início vai ser o 0
+
+        while (atual!=null) {
+            if (valor==indice) {
+                return atual.getValor();
+                
+            }
+            else{
+                atual = atual.getProximo();
+                indice += 1;
+            }
+
+        }
+        return -1;
+            
+       
     }
 
     @Override
@@ -60,8 +78,15 @@ public class ListaLigada implements EstruturaElementar{
 
     @Override
     public void insereInicio(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereInicio'");
+        if(this.cabeca == null){
+            this.cabeca = new No(valor);
+        }
+        else{
+            No n = new No(valor);
+            n.setProximo(cabeca);
+            this.cabeca = n;
+
+        }
     }
 
     @Override
