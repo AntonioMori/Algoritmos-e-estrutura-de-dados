@@ -1,0 +1,6 @@
+if (atual.getProximo()==null && indice <= buscaIndice) {
+                
+    No novoNo = new No(valor);
+    atual.setProximo(novoNo);
+    logger.warning(" added at end");
+}

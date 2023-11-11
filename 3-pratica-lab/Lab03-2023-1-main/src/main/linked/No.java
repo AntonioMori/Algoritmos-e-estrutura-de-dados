@@ -1,6 +1,7 @@
 package linked;
 
 public class No {
+    
     private int valor;
     private No proximo;
 
@@ -20,4 +21,5 @@ public class No {
     public void setProximo(No proximo) {
         this.proximo = proximo;
     }
+    
 }
