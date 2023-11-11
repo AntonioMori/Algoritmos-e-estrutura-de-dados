@@ -120,7 +120,7 @@ public class AppTest {
         e.removeFim();
         assertFalse("Encontrado " + 0, e.buscaElemento(0));
         assertTrue("Encontrado " + 3, e.buscaElemento(3));
-        assertEquals("O ultimo é zero " + 0, 0, e.buscaIndice(2));
+        assertEquals("O ultimo é zero " + 0, 1, e.buscaIndice(2)); //mudança solicitada no telegram
     }
 
     @Test

@@ -244,7 +244,7 @@ private static final Logger logger = Logger.getLogger(ListaLigada.class.getName(
             condition = false;
         }
 
-        while (atual.getProximo()!=null && condition == true) { // enquanto não chegar no ultimo e se nao for o primeiro Nó
+        while (atual.getProximo()!=null && condition) { // enquanto não chegar no ultimo e se nao for o primeiro Nó
             if (atual.getValor()==valor) { // se acharmos o valor então
                 No novoNo = atual.getProximo();
                 anterior.setProximo(novoNo);
@@ -328,14 +328,29 @@ private static final Logger logger = Logger.getLogger(ListaLigada.class.getName(
 
     @Override
     public void removeFim() {
-        No atual = cabeca;// começa pelo primeiro no
-        No anterior = null; // anterior do primeiro == null
-        while (atual.getProximo()!=null) {
-            anterior = atual;
-            atual = atual.getProximo();
-            
+        No atual = cabeca;
+        No anterior = null;
+    
+        if (atual == null) {
+            // Lista vazia
+            logger.warning("error, empty list");
+        } 
+        else{
+            //
+            while (atual.getProximo() != null) {
+                anterior = atual;
+                atual = atual.getProximo();
+            }
+    
+            if (anterior == null) {
+                // Havia apenas um nó na lista
+                cabeca = null;
+            } else {
+                // Remove o último nó
+                anterior.setProximo(null);
+            }
         }
-         anterior.setProximo(null);
     }
+    
     
 }
