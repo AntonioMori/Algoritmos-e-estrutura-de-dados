@@ -1,5 +1,6 @@
 import list.EstruturaElementar;
 import list.FilaAntonio;
+import list.FilaComPilhaAntonio;
 import list.ListaLigada;
 import list.PilhaAntonio;
 
@@ -28,6 +29,12 @@ public class Main {
         
         System.out.println("O primeiro a sair deveria ser 55, foi: "+filaTeste.dequeue());
 
-        System.out.println("");
+        System.out.println("\n\nFILA COM PILHAS");
+        FilaComPilhaAntonio filaComPilhaTeste = new FilaComPilhaAntonio();
+        
+        filaComPilhaTeste.enqueue(99);
+        System.out.println("Fila com pilhas status - criada\nfila.enqueue: 99");
+        System.out.println("fila.Dequeue, deveria ser 99, é: "+ filaComPilhaTeste.dequeue());
+    
     }
 }

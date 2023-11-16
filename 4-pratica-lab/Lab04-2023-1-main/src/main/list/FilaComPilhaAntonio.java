@@ -2,8 +2,8 @@ package list;
 
 public class FilaComPilhaAntonio implements FilaComPilha {
 
-    PilhaAntonio pilhaEnqueue; //pilha de entrada
-    PilhaAntonio pilhaDequeue; // pilha de saida
+    PilhaAntonio pilhaEnqueue = new PilhaAntonio(); //pilha de entrada
+    PilhaAntonio pilhaDequeue = new PilhaAntonio(); // pilha de saida
 
     //construtor
     @Override
@@ -19,8 +19,8 @@ public class FilaComPilhaAntonio implements FilaComPilha {
                 int paciente = pilhaEnqueue.pop(); //o paciente da fila de entrada vai ir para a saida
                 pilhaDequeue.push(paciente);// indo para a saida, ou seja sendo atendido
             }
-            return pilhaDequeue.pop();
         }
+        return pilhaDequeue.pop();
 
     }
 
