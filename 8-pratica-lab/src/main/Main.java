@@ -5,7 +5,7 @@ public class Main {
         BinarySearchTree b = new BinarySearchTree();
         b.insereElemento(1);
         b.insereElemento(2);
-
+        
         System.out.println(b.emOrdem());
     }
 

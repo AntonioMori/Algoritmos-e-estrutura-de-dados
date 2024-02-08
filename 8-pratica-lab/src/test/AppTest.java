@@ -14,6 +14,7 @@ public class AppTest {
         BinarySearchTree b = new BinarySearchTree();
         b.insereElemento(1);
         b.insereElemento(2);
+        b.insereElemento(1);
         assertEquals(true, b.buscaElemento(1));
         assertEquals(true, b.buscaElemento(2));
         assertEquals(false, b.buscaElemento(3));
