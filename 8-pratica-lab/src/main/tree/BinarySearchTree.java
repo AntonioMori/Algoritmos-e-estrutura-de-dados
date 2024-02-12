@@ -1,10 +1,13 @@
 package tree;
 
+import java.util.logging.Logger;
 import org.w3c.dom.Node;
-
 import estrut.Tree;
 
 public class BinarySearchTree implements Tree{
+
+
+    private static final Logger logger = Logger.getLogger(BinarySearchTree.class.getName());
 
     private node root;// ela tem um nó raiz
     
@@ -57,7 +60,9 @@ public class BinarySearchTree implements Tree{
     public void insereElemento(int valor) { //insere um elemento na árvore 
         //se a raiz for nula, o valor é inserido na raiz
         if(this.root == null){
+            
             this.root = new node(valor);
+            logger.warning("Nova árvore criada com raiz " + valor);
         }
         else{
             // se não for null deve ser verificado se o nó é maior ou menor que a raiz
@@ -75,21 +80,29 @@ public class BinarySearchTree implements Tree{
                     }
                     //se não for nulo então o nó atual vai ser o nó esquerdo e refazer a verificação
                     atual = atual.getLeft();
+                    logger.warning("atual agora passa ser o nó esquerdo do nó atual");  
                 }
                 else{// Se o valor a ser inserido for maior que o nó atual
                     if(atual.getRight() == null){//se for nulo ele vai setar como um novo nó
                         atual.setRight(new node(valor));
-                    
+                        
                     }
                     //se não for nulo ele seta o atual como o direito e volta ao loop
                     atual = atual.getRight();
+                    logger.warning("atual agora passa ser o nó direito do nó atual");
                 }
                 
             }
             //uma vez chegado no nó que tem o mesmo valor ele vai setar o valor como o nó esquerdo
-           if (atual.getValue() == valor) {
-            atual.setLeft(new node(valor));
-           }
+            //!!!
+            //se o valor for igual ao no atual, porem existem 10 nos iguais ele precisa percorrer até o null
+
+            //!!!
+            //botar dentro do while
+            if (atual.getValue() == valor){
+                atual.setLeft(new node(valor));
+                logger.warning("nó com valor igual encontrado, adicionado nó igual a esquerda");
+            }   
             
             
         }
