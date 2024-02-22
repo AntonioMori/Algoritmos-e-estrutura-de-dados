@@ -4,7 +4,7 @@ public class node {
     private node left;
     private node right;
     private int value;
-    private int FB;
+    
         
     //criação de um nó
     public node(int value){
@@ -38,12 +38,5 @@ public class node {
         this.right = right;
     }
 
-    public int getFB() {
-        return this.FB;
-    }
-
-    public void setFB(int FatorBalanceamento) {
-        this.FB = FatorBalanceamento;
-    }
 
 }
