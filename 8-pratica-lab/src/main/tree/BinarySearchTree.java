@@ -2,8 +2,7 @@ package tree;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
-import org.w3c.dom.Node;
+import java.util.logging.Logger;    
 import estrut.Tree;
 
 public class BinarySearchTree implements Tree{
